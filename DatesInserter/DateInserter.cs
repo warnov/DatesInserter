@@ -5,7 +5,7 @@ namespace DatesInserter
 {
     public partial class DateInserter
     {
-        private static Microsoft.Office.Interop.Excel.Application 
+        private static Microsoft.Office.Interop.Excel.Application
             App => Globals.ThisAddIn.Application;
         private void btnToday_Click(object sender, RibbonControlEventArgs e)
         {
@@ -27,7 +27,8 @@ namespace DatesInserter
             int delta;
             if (int.TryParse(txtDelta.Text, out delta))
             {
-                 App.ActiveCell.Value =  DateTime.Today + TimeSpan.FromDays(delta);
+                App.ActiveCell.Value = DateTime.Today + TimeSpan.FromDays(delta);
+                txtDelta.Text = string.Empty;
             }
 
         }
